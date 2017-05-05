@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+  function count(){
+	  var text1=document.getElementById("text1");
+	  var text2=document.getElementById("text2");
+	  var symbol=document.getElementById("select");
+	  var result=document.getElementById("fruit");
+	  var text1Val=Number(text1.value);
+	  var text2Val=Number(text2.value);
+	  if(text1.value==""){
+		  alert("输入框1不能为空！");
+		  text1.focus();
+		  return false;
+		  }
+	  else if(text2.value==""){
+		  alert("输入框2不能为空！");
+		  text2.focus();
+		  return false;
+		  }
+	  else if(symbol.value=="/"&&text2Val==0){
+		  alert("被除数不能为零");
+		  text2.focus();
+		  return false;
+		  }
+	  else {
+		  switch(symbol.value){
+			  
+			  case "+":result.value=text1Val+text2Val;
+			  break;
+			  case "-":result.value=text1Val-text2Val;
+			  break;
+			  case "*":result.value=text1Val*text2Val;
+			  break;
+			  case "/":result.value=text1Val/text2Val;
+			  break;
+			  }
+		  }
+		
+
+   }
+</script>
+
+</head>
+<body>
+  <input type="text" id="text1">
+  <select id="select">
+    <option value="+" selected>+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <input type="text" id="text2">
+  <input type="button" value="=" onClick="count()">
+  <input type="text" id="fruit">
+
+</body>
+</html>
